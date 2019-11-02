@@ -48,7 +48,7 @@ navigator.mediaDevices.getUserMedia(videoConstraints)
 
 //mediaEnds
 
-  createCanvas(640, 550); /*made canvas taller, was 320 x 240 before */
+  createCanvas(320, 240); /*made canvas taller, was 320 x 240 before */
   video = createCapture(videoConstraints);
   video.size(320, 240);
 
