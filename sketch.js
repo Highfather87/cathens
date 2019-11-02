@@ -32,7 +32,7 @@ video: {
  }; 
 
 //media
-
+/*
 navigator.mediaDevices.getUserMedia(videoConstraints)
 .then(function(mediaStream) {
   var video = document.querySelector('video');
@@ -43,7 +43,7 @@ navigator.mediaDevices.getUserMedia(videoConstraints)
 })
 .catch(function(err) { console.log(err.name + ": " + err.message); }); // always check for errors at the end.
 
-
+*/
 
 
 //mediaEnds
