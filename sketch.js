@@ -14,26 +14,27 @@ let status;
 let objects = [];
 let catus;
 
-let caTips = ["We hide where the first motor cycle waits", "we love cat food",
-"houses suck for us", "we love mice", "we hate dogs", "we love to gand up if you threaten us",
-"touch us", "give us water", "we love pink", "puss puss", "Morikati lives"];
+let caTips = ["We hide where the first motor cycle waits", "we love cat food", "We hide where the first motor cycle waits", 
+"houses suck for us", "touch us", "We hide where the first motor cycle waits", "We hide where the first motor cycle waits",  "we love mice", "we hate dogs", "we love to gand up if you threaten us",
+"touch us", "give us water", "We hide where the first motor cycle waits", "touch us", "give us water", "give us water", "We hide where the first motor cycle waits",  "we love pink", "puss puss", "Morikati lives"];
 
 function setup() {
 
  //setup video properties
-/*
+
  var videoConstraints = {
 audio: false,
 video: {
-  facingMode: "environment"
+  facingMode: "environment",
+  frameRate:15
 }
 
- }; */
+ }; 
 
 
 
   createCanvas(640, 550); /*made canvas taller, was 320 x 240 before */
-  video = createCapture(VIDEO);
+  video = createCapture(videoConstraints);
   video.size(320, 240);
 
 
@@ -49,6 +50,8 @@ video: {
 function draw() {
   image(video, 0, 0, width, height);
   for (let i = 0; i < objects.length; i++) {
+    /*
+
     noStroke();
     fill(0, 255, 0);
     text(objects[i].label, objects[i].x * width, objects[i].y * height - 5);
@@ -57,10 +60,24 @@ function draw() {
     stroke(0, 255, 0);
     rect(objects[i].x * width, objects[i].y * height, objects[i].w * width, objects[i].h * height);
 
+    */
+
     if (objects[i].label === "cat")
     {
+
+
+      //starts
+    noStroke();
+    fill(0, 255, 0);
+    text(objects[i].label, objects[i].x * width, objects[i].y * height - 5);
+    noFill();
+    strokeWeight(4);
+    stroke(0, 255, 0);
+    rect(objects[i].x * width, objects[i].y * height, objects[i].w * width, objects[i].h * height);
+
+    //ends
     
-    var ranTip = Math.floor(Math.random() * 10);
+    var ranTip = Math.floor(Math.random() * 21);
 
     //var ranTip = 0;
 
