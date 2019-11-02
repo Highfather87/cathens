@@ -14,9 +14,11 @@ let status;
 let objects = [];
 let catus;
 
-let caTips = ["We hide where the first motor cycle waits", "we love cat food", "We hide where the first motor cycle waits", 
-"houses suck for us", "touch us", "We hide where the first motor cycle waits", "We hide where the first motor cycle waits",  "we love mice", "we hate dogs", "we love to gand up if you threaten us",
-"touch us", "give us water", "We hide where the first motor cycle waits", "touch us", "give us water", "give us water", "We hide where the first motor cycle waits",  "we love pink", "puss puss", "Morikati lives"];
+let caTips = ["Moricaty likes money", "Moricaty is a figure of light", "Moricaty is on fire",
+"Moricaty is on fire", "Moricaty likes money",  "Moricaty loves lemons","Moricaty loves lemons", "We hide where the first motor cycle waits", 
+"Moricaty was once a graffiti sprayer", "Moricaty likes money", "Moricaty likes money", "Moricaty was once a graffiti sprayer",  "Moricaty is on fire",
+"Moricaty likes money", "Moricaty likes to ride his no.1 non-real motor bike","Moricaty is on fire", "Moricaty likes money", "Moricaty is on fire",
+"Moricaty is on fire", "Moricaty is on fire", "We hide where the first motor cycle waits", "Moricaty is on fire"];
 
 function setup() {
 
@@ -29,16 +31,8 @@ video: {
   //frameRate:15
 }
 
+
  }; 
-
-
-
-  createCanvas(320, 240); /*made canvas taller, was 320 x 240 before */
-  video = createCapture(videoConstraints);
-  video.elt.setAttribute('playsinline', '');
-  video.size(320, 240);
-
-  //media
 
 navigator.mediaDevices.getUserMedia(videoConstraints)
 .then(function(mediaStream) {
@@ -49,6 +43,15 @@ navigator.mediaDevices.getUserMedia(videoConstraints)
   };
 })
 .catch(function(err) { console.log(err.name + ": " + err.message); }); // always check for errors at the end.
+
+  createCanvas(640, 550); /*made canvas taller, was 320 x 240 before */
+  video = createCapture(videoConstraints);
+  video.elt.setAttribute('playsinline', '');
+  video.size(320, 240);
+
+  //media
+
+
 
 
 
@@ -63,7 +66,9 @@ navigator.mediaDevices.getUserMedia(videoConstraints)
   video.hide();
   status = select('#status');
   catus = select('#catus');
+  clue = select('#clue');
 }
+
 
 function draw() {
   image(video, 0, 0, width, height);
@@ -96,13 +101,18 @@ function draw() {
     fill(255, 0, 0);
 
     //var ranTip = setTimeout(caTipz(), 5000);
-    text(caTips[0], objects[i].x * width, objects[i].y * height - 5 );
-    catus.html('You found a cat!!!');
+    text(caTips[ranTip], objects[i].x * width, objects[i].y * height - 5 );
+    catus.html('You found a cat!!! find another');
     //catus.html('Find another one for secret clues');
     //text((caTips[(random(0,10))]), 400, 300);
     console.log(caTips[3]);
     //console.log((caTips[(random(0,10))]));
-
+		if(clue.html == '') {
+		
+			clue.html(caTips[ranTip]);
+		} else {
+			setTimeout(clue.html(caTips[ranTip]),15000);
+		}
     }
     
   }
@@ -110,10 +120,7 @@ function draw() {
 
 
 
-function caTipz () {
-  var ranTip = Math.floor(Math.random() * 10);;
-  return ranTip;
-} 
+
 
 function startDetecting() {
   status.html('Model loaded!');

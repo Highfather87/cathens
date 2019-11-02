@@ -1,0 +1,35 @@
+
+body{
+	background-color: rgb(234, 251, 234);
+	text-align:center;
+}
+
+.focus1 {
+	background-color: rgb(31, 102, 80);
+	color: rgb(234, 251, 234);
+}
+
+.focus2 {
+	background-color: rgb(111, 154, 141);
+}
+
+.btn-primary {
+	border-color: rgb(241, 69, 76);
+    background-color: rgb(234, 94, 94);
+}
+
+.btn-primary:hover{
+	background-color: rgb(241, 69, 76);
+}
+
+.up-margin{
+	margin-top: 10px;
+}
+
+a {
+	color: rgb(234, 94, 94);
+}
+
+a:hover {
+	color: rgb(234, 251, 234);
+}
