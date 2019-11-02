@@ -26,7 +26,7 @@ function setup() {
 audio: false,
 video: {
   facingMode: "environment",
-  frameRate:15
+  //frameRate:15
 }
 
  }; 
@@ -65,7 +65,7 @@ navigator.mediaDevices.getUserMedia(videoConstraints)
 function draw() {
   image(video, 0, 0, width, height);
   for (let i = 0; i < objects.length; i++) {
-    /*
+    
 
     noStroke();
     fill(0, 255, 0);
@@ -75,20 +75,14 @@ function draw() {
     stroke(0, 255, 0);
     rect(objects[i].x * width, objects[i].y * height, objects[i].w * width, objects[i].h * height);
 
-    */
+    
 
     if (objects[i].label === "cat")
     {
 
 
       //starts
-    noStroke();
-    fill(0, 255, 0);
-    text(objects[i].label, objects[i].x * width, objects[i].y * height - 5);
-    noFill();
-    strokeWeight(4);
-    stroke(0, 255, 0);
-    rect(objects[i].x * width, objects[i].y * height, objects[i].w * width, objects[i].h * height);
+ 
 
     //ends
     
@@ -99,7 +93,7 @@ function draw() {
     fill(255, 0, 0);
 
     //var ranTip = setTimeout(caTipz(), 5000);
-    text(caTips[ranTip], objects[i].x * width, objects[i].y * height - 5 );
+    text(caTips[0], objects[i].x * width, objects[i].y * height - 5 );
     catus.html('You found a cat!!!');
     //catus.html('Find another one for secret clues');
     //text((caTips[(random(0,10))]), 400, 300);
