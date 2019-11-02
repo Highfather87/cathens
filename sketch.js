@@ -31,8 +31,15 @@ video: {
 
  }; 
 
-//media
-/*
+
+
+  createCanvas(320, 240); /*made canvas taller, was 320 x 240 before */
+  video = createCapture(videoConstraints);
+  video.elt.setAttribute('playsinline', '');
+  video.size(320, 240);
+
+  //media
+
 navigator.mediaDevices.getUserMedia(videoConstraints)
 .then(function(mediaStream) {
   var video = document.querySelector('video');
@@ -43,15 +50,10 @@ navigator.mediaDevices.getUserMedia(videoConstraints)
 })
 .catch(function(err) { console.log(err.name + ": " + err.message); }); // always check for errors at the end.
 
-*/
+
 
 
 //mediaEnds
-
-  createCanvas(320, 240); /*made canvas taller, was 320 x 240 before */
-  video = createCapture(videoConstraints);
-  video.elt.setAttribute('playsinline', '');
-  video.size(320, 240);
 
 
   // Create a YOLO method
