@@ -50,6 +50,7 @@ navigator.mediaDevices.getUserMedia(videoConstraints)
 
   createCanvas(320, 240); /*made canvas taller, was 320 x 240 before */
   video = createCapture(videoConstraints);
+  video.elt.setAttribute('playsinline', '');
   video.size(320, 240);
 
 
