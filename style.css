@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Jomolhari|Lobster|Open+Sans+Condensed:300|Pacifico|Staatliches|Yeon+Sung&display=swap');
+
+/*
+font-family: 'Jomolhari', serif;
+font-family: 'Staatliches', cursive;
+font-family: 'Yeon Sung', cursive;
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Pacifico', cursive;
+ */
+html, body {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Pacifico', cursive;
+    font-size: 60px;
+}
+canvas {
+  display: block;
+}
+
+h2 {
+	
+}
